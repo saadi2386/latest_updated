@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-!&1*r#d)0@jo#v24&kic$t6&+4%q0r9&22x0&3t5hhy%g1hjc=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -51,7 +51,7 @@ TIME_ZONE = 'UTC'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    #'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -149,8 +149,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # MEDIA_ROOT = BASE_DIR / 'media'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [os.path.join(BASE_DIR / "static")]
+STATIC_ROOT = os.path.join(BASE_DIR / "staticfiles")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
