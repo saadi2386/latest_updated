@@ -14,8 +14,7 @@ urlpatterns = [
     path('contacts/', include('contacts.urls')), 
     path('accounts/', include('accounts.urls')),
     path('', include('prediction.urls')),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}),
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+
 ]
 
 # Serve static and media files during development
